@@ -1,0 +1,230 @@
+/* 
+  Navy Blue    #05445e
+  Blue Grotto  #189ab4
+  Blue Green   #75e6da
+  Baby Blue    #d4f1f4
+*/
+
+* {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #05445e;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* Room Page */
+
+.room-page .content-wrapper {
+  width: 90%;
+  max-width: 700px;
+  height: 100vh;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-page .messages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid #05445e;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.room-page .message-item {
+  color: white;
+  width: max-content;
+  max-width: 80%;
+  min-width: 100px;
+  padding: 5px 10px 15px;
+  font-size: 0.85rem;
+  border-radius: 3px;
+  position: relative;
+}
+
+.room-page .message-item.my {
+  background-color: #05445e;
+  align-self: flex-end;
+  
+}
+
+.room-page .message-item.others {
+  background-color: #189ab4;
+  align-self: flex-start;
+}
+
+.room-page .message-item .sender {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.room-page .message-item .text-wrapper {
+  display: fleblockx;
+}
+
+.room-page .message-item .text {
+  color: white;
+  font-size: 0.75rem;
+}
+
+.room-page .message-item .time {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  color: white;
+  font-size: 0.65rem;
+  opacity: 0.7;
+}
+
+.room-page .message-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.room-page .form-message {
+  display: flex;
+  border: 1px solid #05445e;
+  border-top: none;
+}
+
+.room-page .input-message {
+  flex-grow: 1;
+  border-radius: 0;
+  border: none;
+  background-color: #f9f9f9;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+}
+
+.room-page .input-message:focus {
+  background-color: #f3f3f3;
+}
+
+.room-page .btn-send {
+  width: 100px;
+  border: none;
+  border-radius: 0;
+  background-color: #05445e;
+  color: white;
+}
+
+
+
+/* Login Page */
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  background-image: url(/src/assets/images/bg-connection.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.login-page .content {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 3px #00000033;
+}
+
+.login-page .title {
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.login-page .field-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page .label {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.login-page .input-username {
+  outline: none;
+  height: 40px;
+  border: 1px solid #05445e99;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 0 5px;
+}
+
+.login-page .input-username:focus {
+  border: 1px solid #05445e;
+}
+
+.login-page .select-rooms {
+  height: 40px;
+  border: 1px solid #05445e99;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #05445eCC;
+}
+
+.login-page .select-rooms:focus {
+  border: 1px solid #05445e;
+  color: #05445e;
+}
+
+.login-page .btn-continue {
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #05445e;
+  color: white;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+
+.login-page .btn-continue:hover {
+  opacity: 0.9;
+}
+
+.login-page .link-github {
+  width: max-content;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition-duration: 200ms;
+}
+
+.login-page .link-github:hover {
+  opacity: 0.8;
+}
+
+.login-page .link-github img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.login-page .link-github span {
+  padding-top: 3px;
+  font-size: 0.75rem;
+}
