@@ -21,7 +21,7 @@ const baseTemplate = `
       <button id="btnContinue" class="btn-continue" type="button">Continue</button>
       
       <a class="link-github" href="https://github.com/andreferrazz" target="_blank">
-        <img src="/src/assets/images/GitHub-Mark-32px.png" />
+        <img src="/assets/images/GitHub-Mark-32px.png" />
         <span>Check the source code on Github</span>
       <a/>
     </div>
