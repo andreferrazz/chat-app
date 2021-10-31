@@ -23,7 +23,7 @@ export class RoomPage extends Component {
 
   socket: Socket | undefined
   channel: Channel | undefined
-  username: string | null
+  username: string | null | undefined
   roomName: string | undefined
 
   constructor() {
@@ -32,15 +32,15 @@ export class RoomPage extends Component {
     this.rootElement.innerHTML = baseTemplate
     this.rootElement.classList.add('room-page')
 
-    const roomName = this.rootElement.querySelector<HTMLTitleElement>('#roomName')!
+    const roomNameElement = this.rootElement.querySelector<HTMLTitleElement>('#roomName')!
     const formMessage = this.rootElement.querySelector<HTMLFormElement>('#formMessage')!
     const messagesContainer = this.rootElement.querySelector<HTMLDivElement>('#messagesContainer')!
 
-    this.username = localStorage.getItem('username')
+    this.setUsername()
 
     this.roomName = getParams().get('name')
 
-    roomName.innerText = `Room: ${this.roomName} - Username: ${this.username}`
+    roomNameElement.innerText = `Room: ${this.roomName} - Username: ${this.username}`
 
     this.connectToLobby()
 
@@ -51,6 +51,14 @@ export class RoomPage extends Component {
     })
 
     this.setFormMessageListener(formMessage)
+  }
+  
+  private setUsername() {
+    this.username = localStorage.getItem('username')
+    
+    if (!this.username) {
+      window.history.pushState({ id: 'redirect_to_login' }, '', '/')
+    }
   }
 
   private connectToLobby() {
@@ -88,13 +96,15 @@ export class RoomPage extends Component {
 
   private createMessageElement({ sender, text, date }: Message): HTMLSpanElement {
     const message = document.createElement('div')
+    
+    const maybeZeroCharacter = date.getMinutes() < 10 ? '0' : ''
 
     message.innerHTML = `
       <div class="sender">${sender}</div>
       <span class="text-wrapper">
         <span class="text">${text}</span>
       </span>
-      <span class="time">${date.getHours()}:${date.getMinutes()}</span>
+      <span class="time">${date.getHours()}:${maybeZeroCharacter}${date.getMinutes()}</span>
     `
     
     const className = sender === this.username ? 'my' : 'others'
