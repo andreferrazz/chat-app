@@ -6,17 +6,15 @@ const baseTemplate = `
       <h1 class="title">Chat App</h1>
       
       <div class="field-wrapper">
-        <span class="label">Nome</span>
+        <span class="label">Username</span>
         <input id="username" class="input-username" type="text" />
       </div>
       
       <div class="field-wrapper">
         <span class="label">Room</span>
         <select id="rooms" class="select-rooms">
-          <option value="" disabled selected>Select the room</option>
-          <option value="lobby">Lobby</option>
-          <option value="2">Room 2</option>
-          <option value="3">Room 3</option>
+          <option value="" disabled>Select the room</option>
+          <option value="lobby" selected>Lobby</option>
         </select>
       </div>
       
